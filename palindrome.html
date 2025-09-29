@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrome Checker</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input { padding: 8px; font-size: 16px; }
+        button { padding: 8px 15px; font-size: 16px; cursor: pointer; }
+        #result { margin-top: 20px; font-size: 1.2em; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Palindrome Number Checker</h1>
+    <input type="text" id="numberInput" placeholder="Enter a number">
+    <button onclick="checkPalindrome()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkPalindrome() {
+            const inputElement = document.getElementById('numberInput');
+            const resultElement = document.getElementById('result');
+            
+            const originalStr = inputElement.value;
+
+            // Check if input is empty
+            if (originalStr.trim() === '') {
+                resultElement.textContent = 'Please enter a number.';
+                resultElement.style.color = 'orange';
+                return;
+            }
+            
+            // Reverse the string
+            const reversedStr = originalStr.split('').reverse().join('');
+            
+            // Compare original with reversed
+            if (originalStr === reversedStr) {
+                resultElement.textContent = `Yes, '${originalStr}' is a palindrome!`;
+                resultElement.style.color = 'green';
+            } else {
+                resultElement.textContent = `No, '${originalStr}' is not a palindrome.`;
+                resultElement.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>

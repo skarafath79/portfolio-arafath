@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature Converter</title>
+     <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input { padding: 8px; font-size: 16px; width: 100px; }
+        button { padding: 8px 15px; font-size: 16px; cursor: pointer; }
+        #result { margin-top: 20px; font-size: 1.2em; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Fahrenheit to Celsius Converter</h1>
+    <input type="number" id="fahrenheitInput" placeholder="°F">
+    <button onclick="convertTemp()">Convert</button>
+    <p id="result"></p>
+
+    <script>
+        function convertTemp() {
+            const fahrenheit = document.getElementById('fahrenheitInput').value;
+            const resultElement = document.getElementById('result');
+
+            if (fahrenheit === '') {
+                resultElement.textContent = 'Please enter a temperature.';
+                return;
+            }
+
+            const celsius = (fahrenheit - 32) * 5 / 9;
+            
+            // toFixed(2) rounds the result to 2 decimal places
+            resultElement.textContent = `${fahrenheit}°F is equal to ${celsius.toFixed(2)}°C`;
+        }
+    </script>
+</body>
+</html>

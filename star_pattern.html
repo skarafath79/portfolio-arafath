@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Pattern</title>
+    <style>
+        body { font-family: monospace; font-size: 18px; }
+        pre { line-height: 1.2; }
+    </style>
+</head>
+<body>
+    <h1>Star Pattern</h1>
+    <pre id="pattern-output"></pre>
+
+    <script>
+        // --- Logic to generate the pattern ---
+        const rows = 5;
+        let pattern = '';
+        
+        console.log("--- Star Pattern (in console) ---");
+        for (let i = 1; i <= rows; i++) {
+            let line = '';
+            for (let j = 1; j <= i; j++) {
+                line += '*';
+            }
+            console.log(line); // Prints to browser console
+            pattern += line + '\n'; // Builds the string for HTML display
+        }
+        
+        // --- Displaying the pattern in HTML ---
+        document.getElementById('pattern-output').textContent = pattern;
+    </script>
+</body>
+</html>

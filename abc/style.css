@@ -1,0 +1,106 @@
+/* --- THEME: Modern Light & Professional Blue --- */
+:root {
+  --bg-light: #F8F9FA;     /* Very light grey background */
+  --bg-cards: #FFFFFF;     /* White for cards and modals */
+  --text-primary: #212529;   /* Dark charcoal for main text */
+  --text-secondary: #6C757D; /* Medium grey for secondary text */
+  --accent: #0D6EFD;        /* Professional blue */
+  --accent-hover: #4791FF;  /* Lighter blue for hover */
+  --border-color: #DEE2E6;  /* Light grey border */
+}
+
+/* --- GENERAL & TYPOGRAPHY STYLES --- */
+*, *::before, *::after { box-sizing: border-box; }
+body { background-color: var(--bg-light); color: var(--text-secondary); font-family: 'Poppins', sans-serif; margin: 0; padding: 0; line-height: 1.6; scroll-behavior: smooth; }
+h1, h2, h3 { color: var(--text-primary); font-weight: 600; }
+section { padding: 100px 20px; max-width: 1000px; margin: 0 auto; }
+a { color: var(--accent); text-decoration: none; transition: color 0.3s ease; }
+a:hover { color: var(--accent-hover); }
+
+/* --- HEADER & NAVIGATION --- */
+header { position: fixed; width: 100%; top: 0; z-index: 1000; background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); }
+nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 20px; }
+.nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 2rem; }
+nav a { color: var(--text-primary); font-weight: 500; }
+
+/* --- HERO SECTION (TEXT ONLY) --- */
+.hero { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding-top: 70px; text-align: center; }
+.hero-intro { color: var(--accent); font-size: 1.1rem; margin-bottom: 1rem; }
+.hero-name { font-size: clamp(40px, 8vw, 80px); margin: 0; line-height: 1.1; }
+.hero-tagline { font-size: clamp(24px, 5vw, 40px); margin: 0.5rem 0 0; color: var(--text-secondary); }
+.hero-description { max-width: 600px; margin: 2rem auto; font-size: 1.1rem; }
+.cta-button { display: inline-block; padding: 1rem 2rem; border: 1px solid var(--accent); background-color: var(--accent); color: #FFF; border-radius: 5px; font-weight: 600; transition: all 0.3s ease; }
+.cta-button:hover { background-color: var(--accent-hover); border-color: var(--accent-hover); }
+
+/* --- SECTION HEADINGS --- */
+section h2 { font-size: 2.8rem; margin-bottom: 3rem; text-align: center; position: relative; }
+section h2::after { content: ''; display: block; width: 70px; height: 4px; background: var(--accent); margin: 15px auto 0; border-radius: 2px; }
+
+/* --- PROJECTS SECTION --- */
+#projects { background-color: var(--bg-cards); }
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.project-card { background: var(--bg-light); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.project-card:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); }
+.project-card h3 { margin-top: 0; color: var(--accent); }
+.project-card p { flex-grow: 1; }
+.project-btn { align-self: flex-start; padding: 0.5rem 1rem; background-color: var(--accent); color: #FFF; border: 1px solid var(--accent); border-radius: 4px; cursor: pointer; transition: background-color 0.3s ease; }
+.project-btn:hover { background-color: var(--accent-hover); }
+
+/* --- SKILLS & CONTACT SECTION --- */
+#skills { background-color: var(--bg-light); }
+.skills-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
+.skills-list span { background: var(--bg-cards); border: 1px solid var(--border-color); padding: 0.7rem 1.2rem; border-radius: 20px; font-weight: 500; font-size: 1.1rem; color: var(--text-primary); }
+#contact p { max-width: 600px; margin: 0 auto 2rem; font-size: 1.1rem; }
+.social-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.contact-btn { padding: 0.8rem 1.5rem; border: 1px solid var(--accent); background-color: var(--accent); color: #FFF; border-radius: 5px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; }
+.contact-btn:hover { background-color: var(--accent-hover); border-color: var(--accent-hover); }
+
+/* --- FOOTER --- */
+footer { text-align: center; padding: 2rem; color: var(--text-secondary); font-size: 0.9rem; background-color: var(--bg-cards); border-top: 1px solid var(--border-color); }
+
+/* --- FADE-IN ANIMATION --- */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* --- MODAL STYLES (LARGER SIZES) --- */
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: center; justify-content: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease-in-out; }
+.modal.show { display: flex; opacity: 1; }
+.modal-content { background-color: var(--bg-cards); color: var(--text-secondary); padding: 2.5rem; border-radius: 10px; position: relative; max-width: 95%; width: auto; box-shadow: 0 5px 25px rgba(0,0,0,0.15); min-width: 400px; }
+.modal-content.wide-modal { width: 600px; }
+.modal-content h2 { margin-top: 0; font-size: 1.8rem; color: var(--accent); }
+.close-button { position: absolute; top: 15px; right: 25px; font-size: 3rem; font-weight: bold; color: #adb5bd; cursor: pointer; }
+
+/* --- STYLES FOR BIGGER PROJECTS INSIDE MODALS --- */
+.project-body { margin-top: 2rem; }
+.project-body input, .student-form input { padding: 1rem; font-size: 1.2rem; border-radius: 5px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-primary); }
+.project-body button, .student-form button, #addChildBtn { cursor: pointer; background: var(--accent); color: #FFF; font-weight: 700; border: none; transition: background-color 0.3s ease; padding: 1rem; font-size: 1.2rem; border-radius: 5px; }
+.project-body button:hover, .student-form button:hover, #addChildBtn:hover { background: var(--accent-hover); }
+
+#palindromeResult, #tempResult { margin-top: 1.5rem; font-size: 1.3rem; font-weight: bold; }
+#palindromeResult.success { color: #198754; }
+#palindromeResult.error { color: #DC3545; }
+#palindromeResult.warn { color: #FFC107; }
+#pattern-output { font-family: monospace; font-size: 2.5rem; line-height: 1; text-align: left; color: var(--text-primary); }
+
+.calculator-container { width: 380px; margin: 2rem auto 0; border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; background-color: #FFF; }
+#calc-display { font-family: monospace; background-color: var(--bg-light); height: 90px; font-size: 3.8rem; padding: 0 1.5rem; color: var(--text-primary); }
+.btn { height: 75px; font-size: 2rem; background-color: var(--bg-cards); color: var(--text-primary); border: 1px solid var(--border-color); }
+.btn:hover { background-color: #f1f3f5; }
+.operator { background-color: var(--accent); color: #FFF; }
+#calc-clear { background-color: #DC3545; color: #FFF; }
+#calc-equals { grid-column: span 2; background-color: #198754; color: #FFF; }
+
+.student-form { text-align: left; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary); }
+.student-form button { width: 100%; margin-top: 1.5rem; }
+
+.multiplication-table { width: 400px; border-collapse: collapse; margin: 0 auto; background: #FFF; }
+.multiplication-table th, .multiplication-table td { border: 1px solid var(--border-color); padding: 1rem; font-size: 1.2rem; }
+.multiplication-table th { background-color: var(--accent); color: #FFF; font-size: 1.3rem; }
+.multiplication-table tr:nth-child(even) { background-color: var(--bg-light); }
+
+#addChildBtn { margin-bottom: 1.5rem; }
+#parent-container { background: var(--bg-light); padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 5px; min-height: 150px; text-align: left; font-size: 1.1rem; }
+.child-element { background: var(--bg-cards); padding: 1rem; margin-top: 1rem; border: 1px dashed #ced4da; border-radius: 4px; }
